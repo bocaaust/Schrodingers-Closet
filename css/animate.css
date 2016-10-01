@@ -3358,9 +3358,9 @@
 
 .img-shadow-1
 {
--webkit-box-shadow: 0 28px 16px -26px black;
--moz-box-shadow: 0 28px 16px -26px black;
-box-shadow: 0 28px 16px -26px black;
+
+
+
 display: inherit;
 z-index: 1;
 }
@@ -3373,9 +3373,8 @@ transform:scale(1.1);
 -ms-transform:scale(1.1);
 -o-transform:scale(1.1);
 
--webkit-box-shadow: 0 58px 36px -56px black;
--moz-box-shadow: 0 58px 36px -56px black;
-box-shadow: 0 58px 36px -56px black;
+
+
 z-index:2;
 }
 
