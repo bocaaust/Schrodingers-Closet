@@ -3418,10 +3418,14 @@ z-index:2;
 .subText {
 	 opacity: 0;
  		display: inline-block;
-		position: absolute;
+		
    
     -webkit-transition: opacity 1000ms ease;
     -moz-transition   : opacity 1000ms ease;
     -o-transition     : opacity 1000ms ease;
     transition        : opacity 1000ms ease;
+}
+.desaturate img {
+	-webkit-filter: grayscale(100%);
+filter: grayscale(100%);
 }
