@@ -25,15 +25,15 @@
   animation-duration: 2s;
 }
 	.first                         { animation-delay:0.06s; -moz-animation-delay:0.06s; -webkit-animation-delay:0.06s; }
-	.dd                         { animation-delay:0.2s; -moz-animation-delay:0.2s; -webkit-animation-delay:0.2s; }
-    .da                         { animation-delay:0.8s; -moz-animation-delay:0.8s; -webkit-animation-delay:0.8s; }
+	.dd                         { animation-delay:0.08s; -moz-animation-delay:0.2s; -webkit-animation-delay:0.2s; }
+    .da                         { animation-delay:0.1s; -moz-animation-delay:0.8s; -webkit-animation-delay:0.8s; }
     .dn                         { animation-delay:0.6s; -moz-animation-delay:0.6s; -webkit-animation-delay:0.6s; }
     .dg                         { animation-delay:1s; -moz-animation-delay:1s; -webkit-animation-delay:1s; }
     .de                         { animation-delay:0.4s; -moz-animation-delay:0.4s; -webkit-animation-delay:0.4s; }
     .dr                         { animation-delay:1.2s; -moz-animation-delay:1.2s; -webkit-animation-delay:1.2s; }
 
     .zz                         { animation-delay:1.4s; -moz-animation-delay:1.4s; -webkit-animation-delay:1.4s; }
-    .zo                         { animation-delay:0.4s; -moz-animation-delay:0.4s; -webkit-animation-delay:0.4s; }
+    .zo                         { animation-delay:0.12s; -moz-animation-delay:0.4s; -webkit-animation-delay:0.4s; }
     .zn                         { animation-delay:0.6s; -moz-animation-delay:0.6s; -webkit-animation-delay:0.6s; }
     .ze                         { animation-delay:0.5s; -moz-animation-delay:0.5s; -webkit-animation-delay:0.5s; }
 
