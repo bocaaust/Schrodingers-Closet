@@ -59,23 +59,23 @@
           <a data-toggle="collapse" style="color:#717171;" data-target="#postForm"><p>click to expand+</p></a> 
        
          <div id="postForm" class="collapse">
-         <form>
+         <form action="/post_item" method="post">
          <div class="form-group">
         <label for="Item">Item</label>
-        <input type="textarea" class="form-control" id="Item" placeholder="Enter Item Name">
+        <input type="textarea" class="form-control" name="item_name" id="Item" placeholder="Enter Item Name">
     </div>
          	<div class="form-group">
         <label for="Email1">Username</label>
-        <input type="email" class="form-control" id="Email1" placeholder="Enter Username">
+        <input type="email" class="form-control" name="username" id="Email1" placeholder="Enter Username">
     </div>
     
      <div class="form-group">
         <label for="Start">Start Day &amp Time</label>
-        <input type="textarea" class="form-control" id="Start" placeholder="Enter Start Day &amp Time">
+        <input type="textarea" class="form-control" name="start_time" id="Start" placeholder="Enter Start Day &amp Time">
     </div>
      <div class="form-group">
         <label for="End">End Day &amp Time</label>
-        <input type="textarea" class="form-control" id="Geography" placeholder="Enter End Day &amp Time">
+        <input type="textarea" class="form-control" name="end_time" id="Geography" placeholder="Enter End Day &amp Time">
     </div>
     
     

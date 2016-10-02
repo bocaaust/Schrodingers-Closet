@@ -1,5 +1,6 @@
 from flask import Flask
 from flask import render_template
+from flask import request
 
 app = Flask(__name__)
 
@@ -9,7 +10,7 @@ import json
 from datetime import date
 from datetime import timedelta
 
-@app.route("/offer")
+@app.route("/post_item")
 def offer():
 
     results = db.post_item()
@@ -18,13 +19,16 @@ def offer():
 
 @app.route('/signup', methods=['GET', 'POST'])
 def signup():
-	print requests.get_data()
+	if request.method == "POST":
+		print request.form['username']
 
-	results = db.create_account(requests.get_data[username,password,geography])
+		results = db.create_account(request.form['username'],request.form['password'],request.form['geography'])
+		return render_template("index.html")
+	else:
+		return render_template("signup.html")
 
-	return render_template("signup.html")
-
-"""@app.route("/formcalling", methods=[GET, POST]):
+"""
+@app.route("/formcalling", methods=[GET, POST]):
 def formcalling():
 
 	print requests.get_data()
@@ -37,9 +41,13 @@ def formcalling():
 def index():    
     return render_template("index.html")
 
-@app.route("/")
+@app.route("/signup.html")
 def sign_up():
 	return render_template("signup.html")
+
+@app.route("/offer.html")
+def offer():
+	return render_template("offer.html")
 
 
 
