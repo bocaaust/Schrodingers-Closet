@@ -3430,11 +3430,12 @@ filter: grayscale(100%);
 }
 .hsat {
 	max-height: 24px;
+	-webkit-filter: grayscale(100%);
+filter: grayscale(100%);
 }
 .hsat:hover {
 	max-height: 24px;
-	-webkit-filter: grayscale(100%);
-filter: grayscale(100%);
+	
 }
 
 .webdesigntuts-workshop {
