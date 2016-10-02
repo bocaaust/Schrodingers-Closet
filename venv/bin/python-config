@@ -1,4 +1,4 @@
-#!/Users/danahsiao/Desktop/vertica-hackathon/venv/bin/python
+#!/Users/bocaaust/Documents/Schrodingers-Closet/venv/bin/python
 
 import sys
 import getopt
