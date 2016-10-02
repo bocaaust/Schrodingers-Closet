@@ -21,6 +21,7 @@ def postitem():
 	if request.method == 'POST':
 		results = db.post_item(request.form['item_name'],request.form['price'],request.form['state'],request.form['username'],request.form['photo'])
 	return render_template("offer.html")
+	
 @app.route('/signup', methods=['GET', 'POST'])
 def signup():
 	if request.method == "POST":

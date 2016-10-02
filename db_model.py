@@ -21,7 +21,7 @@ def available_items():
     return results
 
 def search_contracts(username):
-    sql = "select * from request inner join items using (iid) where orginial_owner = %s and approved = 'false"
+    sql = "select * from request inner join items using (iid) where orginial_owner = %s and approved = 'false'"
     results = query_db(sql, args=(username))
     print results
     return results
@@ -52,7 +52,10 @@ def post_item(item_name,price,geography,photo,original_owner):
     """Post Item to Timeshare"""
     sql = "insert into items(item_name,price,geography,available,original_owner,photo) values ("\
            "%s,%s,%s,true,%s,%s);"
+
     results = query_db(sql, args=(item_name,price,geography,photo,original_owner))
+    
+    print results
     return results
 
 def create_request(item,user,w_day,start_time,end_time):
