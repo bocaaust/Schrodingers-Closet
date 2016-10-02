@@ -217,16 +217,16 @@
 $('#pagination-demo').twbsPagination({
         totalPages: total items/6,
 		if(totalPages < 6){
-        visiblePages: totalPages,
+        visiblePages: totalPages;
 		}else{
-		visiblePages=6,
+		visiblePages=6;
 		}
         onPageClick: function (event, page) {
 			y=(page-1)*6,
 			if (total items > (page-1)*6+6){
-				y = y + 6,
+				y = y + 6;
 			}else{
-				y = total items - (page-1)*6,
+				y = total items - (page-1)*6;
 			}
 			for (i = (page-1)*6, i<6+(page-1)*6,i++){
             $('#page-content').append("<div class="col-sm-4 col-md-4 col-lg-4 col-xs-4" style="height:300px;" >
@@ -241,9 +241,9 @@ $('#pagination-demo').twbsPagination({
 			<p>Original Owner: "Pull Original Owner"</p> 
 		  </div>
         </div>
-      </div></div></div>"),}
+      </div></div></div>");};
 	 
-	  ;
+	  
         }
     });
 </script>
