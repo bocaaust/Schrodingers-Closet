@@ -3430,9 +3430,8 @@ filter: grayscale(100%);
 }
 
 .webdesigntuts-workshop {
-	background: #151515;
 	height: 100%;
-	position: relative;
+	position: inherit;
 	text-align: center;
 	width: 100%;
 }
