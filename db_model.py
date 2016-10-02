@@ -26,6 +26,12 @@ def search_contracts(username):
     print results
     return results
 
+def search_item(item_name):
+    sql = "select * from item where item_name like %/%s%"
+    results = query_db(sql, args=(item_name));
+    print results
+    return results
+
 def approve_contract(username, password, cid):
     sql = "select password from accounts where username = %s"
     results = query_db(sql, args=(username))

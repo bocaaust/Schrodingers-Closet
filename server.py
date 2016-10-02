@@ -31,6 +31,12 @@ def signup():
 	else:
 		return render_template("signup.html")
 
+@app.route('/search_item', methods=['GET', 'POST'])
+def searchItem():
+	if request.method == 'POST':
+		results = db.search_item(request.form['item_form'])
+	return render_template("search.html")
+
 """
 @app.route("/formcalling", methods=[GET, POST]):
 def formcalling():
