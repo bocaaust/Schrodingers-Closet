@@ -63,8 +63,8 @@ def create_request(item,user,w_day,start_time,end_time):
     sql = "select count(cid) from contracts where approved = 'true' group by %d;"
     results = query_db(sql, args=(item))
     if (results <= 3):
-      sql = "insert into request(item,user,w_day,time_interval,approved) values (%d,%s,%s,%d,%d,false); commit;"
-      results = query_db(sql, agrs=(item,user,w_day,time_interval))
+      sql = "insert into request(item,user,w_day,start_time,end_time,approved) values (%d,%s,%s,%u,%u,false); commit;"
+      results = query_db(sql, agrs=(item,user,w_day,start_time,end_time))
     else:
       sql = "update items set available = 'false' where iid = %d;"
       results = query_db(sql, args=(item))
