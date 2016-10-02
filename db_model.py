@@ -20,10 +20,10 @@ def available_items():
     print results
     return results
 
-def create_account(username,geography):
+def create_account(username,password,geography):
     """Create an account"""
     sql = "insert into accounts(username,geography,photo,balanced_owed,balance_invested) values ("\
-            + username + "," + geography + ",0.00,0.00);"
+            + username + "," + password + ","+ geography + ",0.00,0.00);"
     results = query_db(sql)
     return results
 
@@ -45,6 +45,36 @@ def create_request():
       sql = "update items set available = 'false' where iid = " + item
       results = query_db(sql)
     return results
+"""
+create table accounts(
+    username varchar(50) not null, 
+    password varchar(50) not null,
+    geography varchar(50),
+    balance_owed decimal(8,2),
+    balance_invested decimal(8,2),
+    primary key (username));
+
+create table items(
+    iid auto_increment,
+    item_name varchar(50) not null,
+    price decimal(8,2),
+    geography varchar(100),
+    available boolean,
+    original_owner varchar(50),
+    primary key(iid),
+    foreign key (original_owner) references accounts);
+
+create table request(
+    cid auto_increment,
+    item int not null,
+    owner varchar(50) not null,
+    w_day varchar(50),
+    time_interval interval,
+    approved boolean,
+    primary key (cid),
+    foreign key (item) references items,
+    foreign key (owner) references accounts);
+"""
 
 # @app.teardown_appcontext
 def close_connection(exception):
