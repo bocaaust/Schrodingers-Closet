@@ -53,6 +53,10 @@ def sign_up():
 def offer():
 	return render_template("offer.html")
 
+@app.route("/search.html")
+def search():
+	return render_template("search.html")
+
 
 
 if __name__ == "__main__":
