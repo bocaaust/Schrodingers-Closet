@@ -10,7 +10,7 @@ from datetime import date
 from datetime import timedelta
 
 @app.route("/offer")
-def index():
+def offer():
 
     results = db.post_item()
 
@@ -23,11 +23,17 @@ def signup():
 
 	return render_template("signup.html")
 
+@app.route("/formcalling", methods=[GET, POST]):
+def formcalling():
+
+	print requests.get_data()
+
+	results = db.create_account(requests.get_data[username])
+	print results
+	render render_template("page.html", items=results)
+
 @app.route("/")
-@app.route("/setup")
-def setup():
-    results = db.setup()
-    
+def index():    
     return render_template("index.html")
 
 

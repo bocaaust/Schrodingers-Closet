@@ -48,7 +48,6 @@ def connect_to_db():
                  'ssl': False}
 
     db = vertica_python.connect(**conn_info)
-    db.cursor().execute('set search_path to team11_schema, "$user", public;')
 
     return db
 
@@ -56,6 +55,8 @@ def query_db(query, args=(), one=False, db = None, pretty_print=False):
     print "Query string: " + query
     if not db:
         db = connect_to_db()
+        db.cursor().execute('set search_path to team11_schema, "$user", public;')
+
     cur = db.cursor()
 
     try:

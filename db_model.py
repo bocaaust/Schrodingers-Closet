@@ -20,10 +20,10 @@ def available_items():
     print results
     return results
 
-def create_account():
+def create_account(username,geography):
     """Create an account"""
     sql = "insert into accounts(username,geography,photo,balanced_owed,balance_invested) values ("\
-            + username + "," + geography + "," + photo + ",0.00,0.00);"
+            + username + "," + geography + ",0.00,0.00);"
     results = query_db(sql)
     return results
 
