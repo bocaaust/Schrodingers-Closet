@@ -52,7 +52,8 @@ def connect_to_db():
     return db
 
 def query_db(query, args=(), one=False, db = None, pretty_print=False):
-    print "Query string: " + query
+    print "Query string: " + query % args
+    print "Args: " + str(args)
     if not db:
         db = connect_to_db()
         db.cursor().execute('set search_path to team11_schema, "$user", public;')
