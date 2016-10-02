@@ -7,10 +7,11 @@
 <title>Schrodinger's Closet</title>
 
 <!-- Bootstrap -->
-<link href="css/bootstrap.css" rel="stylesheet">
+<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/bootstrap.css') }}">
+
 <style type="text/css">
-@import url("css/animate.css");
-@import url("css/mobileView.css");
+@import url("{{ url_for('static', filename='css/animate.css') }}");
+@import url("{{ url_for('static', filename='css/mobileView.css') }}");
 </style>
 
 <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
@@ -90,9 +91,9 @@
   </div>
 </div>
 <!-- jQuery (necessary for Bootstrap's JavaScript plugins) --> 
-<script src="js/jquery-1.11.3.min.js"></script>
+<script src="{{ url_for('static', filename='js/jquery-1.11.3.min.js') }}"></script>
 
 <!-- Include all compiled plugins (below), or include individual files as needed --> 
-<script src="js/bootstrap.js"></script>
+<script src="{{ url_for('static', filename='js/bootstrap.js') }}"></script>
 </body>
 </html>
