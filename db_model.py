@@ -21,10 +21,19 @@ def available_items():
     return results
 
 def search_contracts(username):
-    sql = "select * from contracts inner join items using (iid) where orginial_owner = 'username'"
+    sql = "select * from contracts inner join items using (iid) where orginial_owner = %s and approved = 'false"
     results = query_db(sql, args=(username))
     print results
     return results
+
+def approve_contract(username, password, cid):
+    sql = "select password from accounts where username = %s"
+    results = query_db(sql, args=(username))
+    if results == password:
+        sql = "update contract set approved = 'true' where cid = %d"
+        results = query_db(sql, args=(cid))
+        return results
+    return "Password not accepted."
 
 def create_account(username,password,geography):
     """Create an account"""
