@@ -14,6 +14,16 @@
   -webkit-animation-fill-mode: both;
   animation-fill-mode: both;
 }
+.hsat {
+  max-height: 24px;
+  -webkit-filter: grayscale(100%);
+  filter: grayscale(100%);
+}
+.hsat:hover {
+  max-height: 24px;
+  -webkit-filter: grayscale(0%);
+  filter: grayscale(0%);
+}
 
 .animated.infinite {
   -webkit-animation-iteration-count: infinite;
