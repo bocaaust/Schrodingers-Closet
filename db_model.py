@@ -20,6 +20,12 @@ def available_items():
     print results
     return results
 
+def search_contracts(username):
+    sql = "select * from contracts inner join items using (iid) where orginial_owner = 'username'"
+    results = query_db(sql, args=(username))
+    print results
+    return results
+
 def create_account(username,password,geography):
     """Create an account"""
     sql = "insert into accounts(username,password,geography,balance_owed,balance_invested) values ("\
