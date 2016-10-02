@@ -1,6 +1,7 @@
 from flask import Flask
 from flask import render_template
 from flask import request
+from flask import jsonify
 
 app = Flask(__name__)
 
@@ -37,6 +38,12 @@ def searchItem():
 	if request.method == 'POST':
 		results = db.search_item(request.form['item_form'])
 	return render_template("search.html")
+
+@app.route('/available_items', methods=['GET','POST'])
+def get_available():
+	results = db.available_items()
+	return jsonify(results)
+
 
 """
 @app.route("/formcalling", methods=[GET, POST]):

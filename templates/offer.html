@@ -212,7 +212,9 @@
 </div>
 <!-- jQuery (necessary for Bootstrap's JavaScript plugins) --> 
 <script src="{{ url_for('static', filename='js/jquery-1.11.3.min.js') }}"></script>
-
+<script type=text/javascript>
+  $SCRIPT_ROOT = {{ request.script_root|tojson|safe }};
+</script>
 <script type="text/javascript">
     // $('#pagination-demo').twbsPagination({
         //totalPages: total items/6,
@@ -222,11 +224,16 @@
 		visiblePages=6;
 		}*/
         // onPageClick: function (event, page) {
-          var callDB = function({
+          $(window).bind('load', function() {
+            $.getJSON($SCRIPT_ROOT + '/available_items', function(data){
+              console.log(data.result)
+            });
+          });
+          /*var callDB = function({
             var results = db.available_items();
             console.log(results);
           });
-          callDB();
+          callDB();*/
       // });
 			//y=(page-1)*6;
 			/*if (total items > (page-1)*6+6){
