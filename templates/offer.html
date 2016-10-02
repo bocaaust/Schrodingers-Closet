@@ -214,18 +214,20 @@
 <script src="{{ url_for('static', filename='js/jquery-1.11.3.min.js') }}"></script>
 
 <script type="text/javascript">
-$('#pagination-demo').twbsPagination({
+    // $('#pagination-demo').twbsPagination({
         //totalPages: total items/6,
 	/*	if(totalPages < 6){
         visiblePages: totalPages;
 		}else{
 		visiblePages=6;
 		}*/
-        onPageClick: function (event, page) {
-          results = db.available_items();
-          console.log(results);
-        }
-      });
+        // onPageClick: function (event, page) {
+          var callDB = function({
+            var results = db.available_items();
+            console.log(results);
+          });
+          callDB();
+      // });
 			//y=(page-1)*6;
 			/*if (total items > (page-1)*6+6){
 				y = y + 6;
