@@ -18,8 +18,9 @@ def offer():
 
 @app.route("/signup")
 def signup():
+	print requests.get_data()
 
-	results = db.create_account()
+	results = db.create_account(requests.get_d)
 
 	return render_template("signup.html")
 
