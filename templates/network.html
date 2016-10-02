@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Schrodinger's Closet</title>
+
+<!-- Bootstrap -->
+<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/bootstrap.css') }}">
+
+<style type="text/css">
+@import url("{{ url_for('static', filename='css/animate.css') }}");
+@import url("{{ url_for('static', filename='css/mobileView.css') }}");
+</style>
+<!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+<!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+</head>
+<body>
+
+<div class="container-fluid">
+  <div class="row animated fadeIn first">
+  	<a href="/">
+    
+  		<div class="col-md-1 show-desktop" style="background-color:#000; color:#FFF; padding-right:0px;">
+        	<img class="img-responsive" src="{{ url_for('static', filename='images/barrow.png') }}" width="50%" style="display:inline; margin-bottom:12px; padding-right:0px; " >
+           
+            
+        	<h1 class="show-desktop" style="padding-top:10px; display:inline;">B</h1>
+           
+        </div>
+        <div class="col-md-1 show-mobile" style="background-color:#000; color:#FFF; padding-right:0px;">
+        	
+            <img class="img-responsive"  src="{{ url_for('static', filename='images/barrow.png') }}" width="50%" style="display:inline; margin-bottom:12px; padding-right:0px; ">
+            
+        	
+            <h1 class="show-mobile" style="padding-top:10px; padding-bottom:10px; padding-right:0px;">Back</h1>
+        </div>
+        </a>
+        <div class="show-desktop">
+        <div class="col-sm-6" style="margin-left:0px; padding-left:4px; display:inline;">
+
+        	
+           
+            
+        	<h1 style="display:inline; padding-left:0px;">ack </h1>
+            
+           </div> 
+        </div>
+  </div>
+  <div class="row">
+  		<div class="col-sm-5 col-sm-offset-1 animated fadeInLeft first">
+        <h2 style="display:inline;">P</h2><h4 style="display:inline;">ending Contracts</h4>
+        	
+<hr>
+
+        </div>
+  </div>
+   <div class="row">
+  		<div class="col-sm-8 col-sm-offset-2 animated fadeInLeft first">
+        <div class="table-responsive">
+    <table class="table table-bordered">
+        <thead>
+            <tr>
+                <th>#</th>
+                <th>Item ID</th>
+                <th>Item Name</th>
+                <th>Interested User</th>
+                <th>Price</th>
+                <th>Interested Times</th>
+                <th>Geography</th>
+                <th>Approve?</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <th scope="row">1</th>
+                <td>001</td>
+                <td>Nintendo DS</td>
+                <td>dhsiao@wellesley.edu</td>
+                <td>$300</td>
+                <td>M,T,W</td>
+                <td>Maine</td>
+                <td><img class="hsat img-responsive" src="http://www.iconsdb.com/icons/preview/green/checked-checkbox-xxl.png"></td>
+            </tr>
+            
+        </tbody>
+    </table>
+</div>
+</div>
+
+<!-- jQuery (necessary for Bootstrap's JavaScript plugins) --> 
+<script src="{{ url_for('static', filename='js/jquery-1.11.3.min.js') }}"></script>
+
+<!-- Include all compiled plugins (below), or include individual files as needed --> 
+<script src="{{ url_for('static', filename='js/bootstrap.js') }}"></script>
+</body>
+</html>

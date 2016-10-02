@@ -71,6 +71,9 @@ def offer():
 def search():
 	return render_template("search.html")
 
+@app.route("/network.html")
+def network():
+    return render_template("network.html")
 
 
 if __name__ == "__main__":
