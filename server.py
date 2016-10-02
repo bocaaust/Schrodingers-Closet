@@ -13,8 +13,8 @@ from datetime import timedelta
 @app.route("/post_offer", methods=['GET', 'POST'])
 def post_offer():
 	if request.method == 'POST':
-    	results = db.create_request(request.form['item_id'],request.form['username'],request.form['w_day'],request.form['start_time'],request.form['end_time'])
-    return render_template("offer.html")
+		results = db.create_request(request.form['item_id'],request.form['username'],request.form['w_day'],request.form['start_time'],request.form['end_time'])
+	return render_template("offer.html")
 
 @app.route("/post_item", methods=['GET', 'POST'])
 def postitem():
@@ -43,7 +43,7 @@ def formcalling():
 """
 @app.route("/")
 def index():    
-    return render_template("index.html")
+	return render_template("index.html")
 
 @app.route("/signup.html")
 def sign_up():
@@ -56,4 +56,4 @@ def offer():
 
 
 if __name__ == "__main__":
-    app.run('0.0.0.0')
+	app.run('0.0.0.0')
