@@ -53,7 +53,6 @@ def connect_to_db():
 
 def query_db(query, args=(), one=False, db = None, pretty_print=False):
     print "Query string: " + query % args
-    print "Args: " + str(args)
     if not db:
         db = connect_to_db()
         db.cursor().execute('set search_path to team11_schema, "$user", public;')
@@ -63,7 +62,6 @@ def query_db(query, args=(), one=False, db = None, pretty_print=False):
     try:
         cur.execute(query, args)
         rv = cur.fetchall()
-
         if rv and pretty_print:
             pretty_print_results(cur, rv)
 

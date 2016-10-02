@@ -15,28 +15,28 @@ def available_items():
     """
         Select 1 from database
     """
-    sql = "SELECT * FROM items where available = 'true'"
+    sql = "SELECT * FROM items where available = 'true';"
     results = query_db(sql)
     print results
     return results
 
 def search_contracts(username):
-    sql = "select * from request inner join items using (iid) where orginial_owner = %s and approved = 'false'"
+    sql = "select * from request inner join items using (iid) where original_owner = %s and approved = 'false';"
     results = query_db(sql, args=(username))
     print results
     return results
 
 def search_item(item_name):
-    sql = "select * from item where item_name like %/%s%"
+    sql = "select * from item where item_name like %/%s%;"
     results = query_db(sql, args=(item_name));
     print results
     return results
 
 def approve_contract(username, password, cid):
-    sql = "select password from accounts where username = %s"
+    sql = "select password from accounts where username = %s;"
     results = query_db(sql, args=(username))
     if results == password:
-        sql = "update request set approved = 'true' where cid = %d"
+        sql = "update request set approved = 'true' where cid = %d;"
         results = query_db(sql, args=(cid))
         return results
     return "Password not accepted."
@@ -44,14 +44,14 @@ def approve_contract(username, password, cid):
 def create_account(username,password,geography):
     """Create an account"""
     sql = "insert into accounts(username,password,geography,balance_owed,balance_invested) values ("\
-            "%s,%s,%s,0.00,0.00);"
+            "%s,%s,%s,0.00,0.00); commit;"
     results = query_db(sql, args=(username,password,geography))
     return results
 
 def post_item(item_name,price,geography,photo,original_owner):
     """Post Item to Timeshare"""
     sql = "insert into items(item_name,price,geography,available,original_owner,photo) values ("\
-           "%s,%s,%s,true,%s,%s);"
+           "%s,%s,%s,true,%s,%s); commit;"
 
     results = query_db(sql, args=(item_name,price,geography,photo,original_owner))
     
@@ -60,13 +60,13 @@ def post_item(item_name,price,geography,photo,original_owner):
 
 def create_request(item,user,w_day,start_time,end_time):
     """Create contract with an item"""
-    sql = "select count(cid) from contracts where approved = 'true' group by %d"
+    sql = "select count(cid) from contracts where approved = 'true' group by %d;"
     results = query_db(sql, args=(item))
     if (results <= 3):
-      sql = "insert into request(item,user,w_day,time_interval,approved) values (%d,%s,%s,%d,%d,false)"
+      sql = "insert into request(item,user,w_day,time_interval,approved) values (%d,%s,%s,%d,%d,false); commit;"
       results = query_db(sql, agrs=(item,user,w_day,time_interval))
     else:
-      sql = "update items set available = 'false' where iid = %d"
+      sql = "update items set available = 'false' where iid = %d;"
       results = query_db(sql, args=(item))
     return results
 """
