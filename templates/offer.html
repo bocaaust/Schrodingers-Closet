@@ -133,7 +133,7 @@
   		  <hr>
 	<div class="container-fluid">
   <div class="row text-center">
-  <!--
+ 
     <div class="col-sm-4 col-md-4 col-lg-4 col-xs-4" style="height:300px;" >
       <div class="thumbnail" style="height:280px; padding-top:12px;"> <img src="http://www.bikesdirect.com/products/dawes/images/lt-sport-red-xiv-2100.jpg" alt="Thumbnail Image 1" class="img-responsive" style="max-height: 150px">
         <div class="caption">
@@ -201,18 +201,17 @@
       <li class="disabled"><a href="#">5</a></li>
       <li> <a href="#" aria-label="Next"> <span aria-hidden="true">&raquo;</span> </a> </li>
     </ul>
-  </nav>-->
-  <ul id="pagination-demo" class="pagination-sm"></ul>
-  </div>
-</div>
+  </nav>
+ <!-- <ul id="pagination-demo" class="pagination-sm"></ul>-->
 <hr>
 
         </div>
   </div>
 </div>
+</div>
 <!-- jQuery (necessary for Bootstrap's JavaScript plugins) --> 
 <script src="{{ url_for('static', filename='js/jquery-1.11.3.min.js') }}"></script>
-<script type=text/javascript>
+<!--<script type=text/javascript>
   $SCRIPT_ROOT = {{ request.script_root|tojson|safe }};
 </script>
 <script type="text/javascript">
@@ -246,7 +245,7 @@
         }
     });*/
 </script>
-
+-->
 <!-- Include all compiled plugins (below), or include individual files as needed --> 
 <script src="{{ url_for('static', filename='js/bootstrap.js') }}"></script>
 </body>
