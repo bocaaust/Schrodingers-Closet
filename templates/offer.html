@@ -133,6 +133,7 @@
   		  <hr>
 	<div class="container-fluid">
   <div class="row text-center">
+  <!--
     <div class="col-sm-4 col-md-4 col-lg-4 col-xs-4" style="height:300px;" >
       <div class="thumbnail" style="height:280px; padding-top:12px;"> <img src="http://www.bikesdirect.com/products/dawes/images/lt-sport-red-xiv-2100.jpg" alt="Thumbnail Image 1" class="img-responsive" style="max-height: 150px">
         <div class="caption">
@@ -200,7 +201,9 @@
       <li class="disabled"><a href="#">5</a></li>
       <li> <a href="#" aria-label="Next"> <span aria-hidden="true">&raquo;</span> </a> </li>
     </ul>
-  </nav>
+  </nav>-->
+  <ul id="pagination-demo" class="pagination-sm"></ul>
+  </div>
 </div>
 <hr>
 
@@ -209,6 +212,41 @@
 </div>
 <!-- jQuery (necessary for Bootstrap's JavaScript plugins) --> 
 <script src="{{ url_for('static', filename='js/jquery-1.11.3.min.js') }}"></script>
+
+<script type="text/javascript">
+$('#pagination-demo').twbsPagination({
+        totalPages: total items/6,
+		if(totalPages < 6){
+        visiblePages: totalPages,
+		}else{
+		visiblePages=6,
+		}
+        onPageClick: function (event, page) {
+			y=(page-1)*6,
+			if (total items > (page-1)*6+6){
+				y = y + 6,
+			}else{
+				y = total items - (page-1)*6,
+			}
+			for (i = (page-1)*6, i<6+(page-1)*6,i++){
+            $('#page-content').append("<div class="col-sm-4 col-md-4 col-lg-4 col-xs-4" style="height:300px;" >
+      <div class="thumbnail" style="height:280px; padding-top:12px;"><div class="thumbnail" style="height:280px; padding-top:12px;"> <img src="pull image from flask" alt="Thumbnail Image" class="img-responsive" style="max-height: 150px">
+        <div class="caption">
+          <h3>Pull Item Name from Flask</h3>
+          <p><a data-toggle="collapse" data-target="#information"+i class="btn btn-primary" role="button"> More Info</a></p>
+		  <div id="information"+i class="collapse">
+		  	<p>ID: "Pull Item ID"</p>
+			<p>Price "Pull Item Price"</p>
+			<p>Geography: "Pull Item Geography"</p>
+			<p>Original Owner: "Pull Original Owner"</p> 
+		  </div>
+        </div>
+      </div></div></div>"),}
+	 
+	  ;
+        }
+    });
+</script>
 
 <!-- Include all compiled plugins (below), or include individual files as needed --> 
 <script src="{{ url_for('static', filename='js/bootstrap.js') }}"></script>
