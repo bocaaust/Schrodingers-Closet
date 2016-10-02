@@ -59,23 +59,28 @@
           <a data-toggle="collapse" style="color:#717171;" data-target="#postForm"><p>click to expand+</p></a> 
        
          <div id="postForm" class="collapse">
-         <form action="/post_item" method="post">
+         <form action="/post_offer" method="post">
          <div class="form-group">
         <label for="Item">Item</label>
-        <input type="textarea" class="form-control" name="item_name" id="Item" placeholder="Enter Item Name">
+        <input type="textarea" class="form-control" name="item_id" id="Item" placeholder="Enter Item ID">
     </div>
          	<div class="form-group">
         <label for="Email1">Username</label>
         <input type="email" class="form-control" name="username" id="Email1" placeholder="Enter Username">
     </div>
+
+    <div class="form-group">
+      <label for="Days">Days of the Week</label>
+      <input type="textarea" class="form-control" name="w_day" id="Days" placeholder="Enter Days Needed ex. M,H,F">
+    </div>
     
      <div class="form-group">
-        <label for="Start">Start Day &amp Time</label>
-        <input type="textarea" class="form-control" name="start_time" id="Start" placeholder="Enter Start Day &amp Time">
+        <label for="Start">Start Time</label>
+        <input type="time" class="form-control" name="start_time" id="Start" placeholder="Enter Start Time">
     </div>
      <div class="form-group">
-        <label for="End">End Day &amp Time</label>
-        <input type="textarea" class="form-control" name="end_time" id="Geography" placeholder="Enter End Day &amp Time">
+        <label for="End">End Time</label>
+        <input type="time" class="form-control" name="end_time" id="Geography" placeholder="Enter End Time">
     </div>
     
     
@@ -93,26 +98,26 @@
           <a data-toggle="collapse" style="color:#717171;" data-target="#postItem"><p>click to expand+</p></a> 
        
          <div id="postItem" class="collapse">
-         <form>
+         <form action='/post_item', method="post">
          <div class="form-group">
         <label for="Item2">Item</label>
-        <input type="textarea" class="form-control" id="Item2" placeholder="Enter Item Name">
+        <input type="textarea" class="form-control" name="item_name" id="Item2" placeholder="Enter Item Name">
     </div>
     <div class="form-group">
         <label for="Price">Price</label>
-        <input type="textarea" class="form-control" id="Price" placeholder="Enter Item Value">
+        <input type="textarea" class="form-control" name="price" id="Price" placeholder="Enter Item Value">
     </div>
          	<div class="form-group">
         <label for="Email2">Original Username</label>
-        <input type="email" class="form-control" id="Email2" placeholder="Enter Username">
+        <input type="email" class="form-control" name="username" id="Email2" placeholder="Enter Username">
     </div>
          <div class="form-group">
         <label for="Link">Link to Photo</label>
-        <input type="textarea" class="form-control" id="Link" placeholder="Enter Link to a Photo">
+        <input type="textarea" class="form-control" name="photo" id="Link" placeholder="Enter Link to a Photo">
     </div>
      <div class="form-group">
         <label for="Geography">Geography</label>
-        <input type="textarea" class="form-control" id="Geography" placeholder="Enter Geographical Location">
+        <input type="textarea" class="form-control" name="state" id="Geography" placeholder="Enter State">
     </div>
     
     <button type="submit" class="btn btn-default">Submit</button>
