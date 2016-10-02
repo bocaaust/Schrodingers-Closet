@@ -29,8 +29,8 @@ def create_account(username,password,geography):
 
 def post_item(item_name,price,geography,photo,original_owner):
     """Post Item to Timeshare"""
-    sql = "insert into items(item_name,price,geography,photo,available,original_owner) values ("\
-           "%s,%s,%s,%s,true,%s);"
+    sql = "insert into items(item_name,price,geography,available,original_owner,photo) values ("\
+           "%s,%s,%s,true,%s,%s);"
     results = query_db(sql, args=(item_name,price,geography,photo,original_owner))
     return results
 
